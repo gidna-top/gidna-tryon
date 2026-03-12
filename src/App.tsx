@@ -88,7 +88,8 @@ export default function App() {
         try {
           // Use a proxy or direct fetch if CORS allows
           // Since we are in a browser, we try to fetch it
-          const response = await fetch(clothingUrl);
+         const proxyUrl = `https://gidna-proxy.guliy4uk.workers.dev/?url=${encodeURIComponent(clothingUrl)}`;
+const response = await fetch(proxyUrl);
           const blob = await response.blob();
           const reader = new FileReader();
           reader.onloadend = () => {
